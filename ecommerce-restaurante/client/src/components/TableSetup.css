@@ -1,0 +1,70 @@
+.table-setup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.table-setup-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 350px;
+}
+
+.table-setup-modal h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.table-setup-modal p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.guest-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.guest-counter button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.guest-counter span {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 2rem;
+  min-width: 50px;
+}
+
+.confirm-button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background-color: #ff7f50;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}

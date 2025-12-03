@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+.shopping-cart {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.back-button, .trash-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-header h1 {
+  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #17a2b8;
+  text-align: center;
+  margin: 0;
+}
+
+.carrito-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.diner-card {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 250px;
+  min-height: 300px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.diner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.diner-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #17a2b8;
+}
+
+.delete-diner {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff0000;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.delete-diner:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.customize-order-btn {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.2s;
+}
+
+.customize-order-btn:hover {
+  background-color: #138496;
+}
+
+.add-diner-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-items {
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cart-item img {
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.item-info, .item-details {
+  flex-grow: 1;
+}
+
+.item-info p, .item-details p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.item-info span, .item-details span {
+  color: #888;
+}
+
+.quantity-selector, .item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-selector button, .item-quantity button {
+  background-color: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.quantity-selector span, .item-quantity span {
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+.order-details {
+  margin-bottom: 2rem;
+}
+
+.order-details h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.diners-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.max-diners {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.order-summary {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+}
+
+.order-summary h2 {
+  color: #17a2b8;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-top: 1px solid #dee2e6;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checkout-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.checkout-button:hover {
+  background-color: #138496;
+}

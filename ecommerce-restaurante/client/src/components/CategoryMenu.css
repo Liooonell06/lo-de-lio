@@ -1,0 +1,122 @@
+.category-menu-page {
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+  }
+  
+  .category-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .back-button, .cart-button {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  .cart-count {
+    background-color: #ff4500;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    vertical-align: top;
+  }
+
+  .controls-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .sort-options {
+    display: flex;
+    align-items: center;
+  }
+
+  .sort-options label {
+    margin-right: 0.5rem;
+  }
+
+  .sort-options select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .category-menu-items {
+    padding: 1rem;
+  }
+  
+  .category-menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
+  
+  .item-details {
+    flex-grow: 1;
+  }
+  
+  .item-details h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .item-details p {
+    color: #666;
+    margin: 0.3rem 0;
+  }
+  
+  .item-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .add-button {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .category-menu-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .view-cart-button {
+    background-color: #ff4500;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+.confirmation-payment {
+  background: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.confirmation-payment .confirmation-icon svg {
+  stroke: #17a2b8;
+}
+
+.confirmation-payment h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #17a2b8;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.confirmation-payment p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.confirmation-payment .order-number {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.confirmation-payment .order-number span {
+  display: block;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-payment .order-number strong {
+  font-size: 1.5rem;
+  color: #17a2b8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.confirmation-payment .home-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.confirmation-payment .home-button:hover {
+  background-color: #138496;
+}
+
+.confirmation-payment .section {
+  margin-bottom: 2rem;
+}
+
+.confirmation-payment .section h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.confirmation-payment .delivery-details p, 
+.confirmation-payment .delivery-details a {
+  font-size: 0.9rem;
+}
+
+.confirmation-payment .delivery-details a {
+  color: #ff8c00;
+  text-decoration: none;
+}
+
+.confirmation-payment .order-summary .summary-item, 
+.confirmation-payment .order-summary .summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-payment .order-summary .final-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.confirmation-payment .payment-method .payment-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.confirmation-payment .payment-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.confirmation-payment .payment-option .card-icon,
+.confirmation-payment .payment-option .paypal-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.confirmation-payment .place-order-button {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
