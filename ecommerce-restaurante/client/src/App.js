@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, Navigate } from 'react-router-dom';
+import { CartProvider } from './CartContext';
 import LandingPage from './components/LandingPage';
 import AuthPage from './components/AuthPage';
 import MainMenu from './components/MainMenu';
@@ -21,7 +22,7 @@ function ProductDetailWrapper() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/productos/${id}`)
+    fetch(`http://localhost:5000/api/productos/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Producto no encontrado');
@@ -56,30 +57,32 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/auth" element={<AuthPage setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/main-menu" element={<MainMenu />} />
-        <Route path="/category/:categoryName" element={<CategoryMenu />} />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Profile setIsAuthenticated={setIsAuthenticated} />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/product/:id" element={<ProductDetailWrapper />} />
-        <Route path="/product-detail/:id" element={<ProductDetailWrapper />} />
-        <Route path="/carrito-principal" element={<ShoppingCart />} />
-        <Route path="/gestion" element={<Gestion />} />
-        <Route path="/checkout" element={<ConfirmationPayment />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/auth" element={<AuthPage setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/main-menu" element={<MainMenu />} />
+          <Route path="/category/:categoryName" element={<CategoryMenu />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Profile setIsAuthenticated={setIsAuthenticated} />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/product/:id" element={<ProductDetailWrapper />} />
+          <Route path="/product-detail/:id" element={<ProductDetailWrapper />} />
+          <Route path="/carrito-principal" element={<ShoppingCart />} />
+          <Route path="/gestion" element={<Gestion />} />
+          <Route path="/checkout" element={<ConfirmationPayment />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 
