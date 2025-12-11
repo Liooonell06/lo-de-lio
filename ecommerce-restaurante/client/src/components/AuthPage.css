@@ -6,121 +6,144 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .info-section {
   text-align: center;
   background: white;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  max-width: 450px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
 .info-section h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  color: #007bff;
+  font-size: 2.2rem;
+  color: #2c3e50;
   margin-bottom: 10px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .info-section p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  color: #6c757d;
+  font-size: 1.1rem;
+  color: #7f8c8d;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .info-section h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  color: #007bff;
+  font-size: 1.8rem;
+  color: #2c3e50;
   margin-bottom: 20px;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .info-section input,
 .info-section select {
-  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  color: #495057;
+  color: #34495e;
   margin-bottom: 15px;
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  background: white;
+  padding: 1rem 1.2rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 12px;
+  background: #f8f9fa;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .info-section input:focus,
 .info-section select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .error-message {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #f5c6cb;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  color: #c0392b;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #e74c3c;
   margin-bottom: 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
 }
 
 .success-message {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #c3e6cb;
+  background: linear-gradient(135deg, #a8e6cf, #dcedc8);
+  color: #27ae60;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #2ecc71;
   margin-bottom: 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
 }
 
 .info-section button[type="submit"] {
   width: 100%;
-  padding: 12px;
+  padding: 1rem;
   border: none;
-  border-radius: 5px;
-  background: #007bff;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  letter-spacing: 0.5px;
   margin-top: 10px;
 }
 
 .info-section button[type="submit"]:hover {
-  background: #0056b3;
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .switch-button {
   margin-bottom: 30px;
-  padding: 10px 20px;
-  border: 1px solid #007bff;
-  border-radius: 5px;
+  padding: 12px 25px;
+  border: 2px solid #667eea;
+  border-radius: 20px;
   background: transparent;
-  color: #007bff;
-  font-weight: 500;
+  color: #667eea;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
 }
 
 .switch-button:hover {
-  background: #007bff;
+  background: #667eea;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 /* Responsive */

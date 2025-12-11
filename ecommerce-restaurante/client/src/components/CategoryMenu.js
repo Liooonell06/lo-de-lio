@@ -129,9 +129,6 @@ function CategoryMenu() {
           </div>
         ))}
       </main>
-      <footer className="category-menu-footer">
-        <Link to="/carrito-principal" className="view-cart-button">Ver Carrito</Link>
-      </footer>
     </div>
   );
 }

@@ -1,70 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
 
 .confirmation-payment {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .confirmation-payment .confirmation-icon svg {
-  stroke: #17a2b8;
+  stroke: #667eea;
+  width: 80px;
+  height: 80px;
 }
 
 .confirmation-payment h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: #17a2b8;
-  font-size: 2rem;
+  color: #2c3e50;
+  font-size: 2.5rem;
   margin: 1rem 0;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .confirmation-payment p {
-  font-size: 1.1rem;
-  color: #6c757d;
+  font-size: 1.2rem;
+  color: #7f8c8d;
   text-align: center;
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .confirmation-payment .order-number {
   background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
   text-align: center;
   margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.confirmation-payment .order-number::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
 .confirmation-payment .order-number span {
   display: block;
-  font-size: 0.9rem;
-  color: #6c757d;
+  font-size: 1rem;
+  color: #7f8c8d;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .confirmation-payment .order-number strong {
-  font-size: 1.5rem;
-  color: #17a2b8;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #667eea;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .confirmation-payment .home-button {
-  background-color: #17a2b8;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  font-size: 1rem;
+  padding: 1.2rem 3rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .confirmation-payment .home-button:hover {
-  background-color: #138496;
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .confirmation-payment .section {
@@ -108,27 +131,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
+  padding: 1.5rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 15px;
+  background: white;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.confirmation-payment .payment-option:hover {
+  border-color: #667eea;
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.confirmation-payment .payment-option.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .confirmation-payment .payment-option .card-icon,
 .confirmation-payment .payment-option .paypal-icon {
   margin-right: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .confirmation-payment .place-order-button {
-  background-color: #ff8c00;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 100%;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  border-radius: 25px;
+  font-size: 1.4rem;
+  font-weight: 700;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.confirmation-payment .place-order-button:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
