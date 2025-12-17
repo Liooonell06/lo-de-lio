@@ -86,6 +86,12 @@ INSERT INTO productos (nombre, descripcion, precio, imagen_url, id_categoria) VA
 ('Cóctel de Mariscos', 'Cóctel refrescante', 4.99, '/images/whatsapp.png', 4),
 ('Té Helado', 'Té helado natural', 3.49, '/images/telefono.png', 4);
 
+INSERT INTO mesas (num_personas, estado) VALUES
+(4, 'Disponible'),
+(2, 'Disponible'),
+(6, 'Disponible'),
+(8, 'Disponible');
+
 INSERT INTO usuarios (nombre, apellido, password, dni, rol) VALUES
 ('Admin', 'User', 'admin123', 12345678, 'admin'),
 ('Juan', 'Perez', 'user123', 87654321, 'user');

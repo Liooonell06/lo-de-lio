@@ -1,10 +1,67 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../CartContext';
 import './ShoppingCart.css';
 
 function ShoppingCart() {
-  const { cart, updateQuantity, getTotal } = useCart();
+  const { cart, updateQuantity, getTotal, clearCart } = useCart();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const submitOrder = async () => {
+    if (cart.length === 0) return;
+
+    setIsSubmitting(true);
+    try {
+      // Create order
+      const total = getTotal() + 30; // including shipping
+      const orderResponse = await fetch('http://localhost:5000/api/pedidos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id_mesa: null, // no table assigned
+          total: total,
+          estado: 'Pendiente'
+        }),
+      });
+
+      if (!orderResponse.ok) {
+        const errorText = await orderResponse.text();
+        throw new Error(`Failed to create order: ${errorText}`);
+      }
+
+      const orderData = await orderResponse.json();
+      const orderId = orderData.id_pedido;
+
+      // Add order details
+      for (const item of cart) {
+        const subtotal = item.price * item.quantity;
+        await fetch('http://localhost:5000/api/pedido_detalle', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id_pedido: orderId,
+            id_producto: item.id,
+            cantidad: item.quantity,
+            subtotal: subtotal,
+          }),
+        });
+      }
+
+      // Clear cart and navigate to confirmation
+      clearCart();
+      navigate('/checkout');
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      // alert('Error al procesar el pedido. Inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="shopping-cart">
@@ -58,9 +115,13 @@ function ShoppingCart() {
           </div>
         </div>
 
-        <Link to="/checkout">
-          <button className="checkout-button">Continuar con el Pago</button>
-        </Link>
+        <button
+          className="checkout-button"
+          onClick={submitOrder}
+          disabled={isSubmitting || cart.length === 0}
+        >
+          {isSubmitting ? 'Procesando...' : 'Continuar con el Pago'}
+        </button>
       </div>
     </div>
   );
