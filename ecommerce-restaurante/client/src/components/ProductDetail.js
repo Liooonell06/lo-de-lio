@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../CartContext';
 import './ProductDetail.css';
 
 // Función auxiliar para formatear precio
 const formatPrice = (price) => {
-  return `$${parseFloat(price).toFixed(2)} MXN`;
+  return `$${parseFloat(price).toFixed(2)} usd`;
 };
 
 function ProductDetail({ product }) {
+  const { getCartCount } = useCart();
+  const navigate = useNavigate();
+
   if (!product) {
     return <div>Producto no encontrado</div>;
   }
@@ -15,8 +19,11 @@ function ProductDetail({ product }) {
   return (
     <div className="product-detail">
       <header className="product-header">
-        <Link to="/" className="back-button">←</Link>
-        <button className="favorite-button">♡</button>
+        <button onClick={() => navigate(-1)} className="back-button">←</button>
+        <h1>{product.name}</h1>
+        <Link to="/carrito-principal" className="cart-button">
+          <span role="img" aria-label="cart">🛒</span> <span className="cart-count">{getCartCount()}</span>
+        </Link>
       </header>
 
       <img src={product.image} alt={product.name} className="product-image" />
@@ -33,18 +40,28 @@ function ProductDetail({ product }) {
 
         <h2>Personaliza tu plato</h2>
         <div className="customization">
-          <label htmlFor="spiciness">Nivel de Picante</label>
-          <select id="spiciness" defaultValue="medio">
-            <option value="bajo">Bajo</option>
-            <option value="medio">Medio</option>
-            <option value="alto">Alto</option>
-          </select>
-
-          <label>Tortillas</label>
-          <div className="tortilla-options">
-            <button className="active">Maiz</button>
-            <button>Harina</button>
-          </div>
+          {product.category.toLowerCase().includes('bebidas') ? (
+            <>
+              <label htmlFor="size">Tamaño</label>
+              <select id="size" defaultValue="regular">
+                <option value="pequeño">Pequeño</option>
+                <option value="regular">Regular</option>
+                <option value="grande">Grande</option>
+              </select>
+            </>
+          ) : product.category.toLowerCase().includes('postres') ? (
+            <>
+              <label htmlFor="topping">Adicionales</label>
+              <select id="topping" defaultValue="ninguno">
+                <option value="ninguno">Ninguno</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="caramelo">Caramelo</option>
+                <option value="frutas">Frutas</option>
+              </select>
+            </>
+          ) : null}
+          <label htmlFor="special-instructions">Instrucciones especiales (opcional)</label>
+          <textarea id="special-instructions" placeholder="Escribe aquí tus instrucciones especiales para el plato..."></textarea>
         </div>
 
         <Link to="/carrito-principal">
